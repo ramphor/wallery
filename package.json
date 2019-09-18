@@ -1,0 +1,24 @@
+{
+  "name": "wallery",
+  "version": "1.0.0",
+  "description": "WordPress gallery for meta box and frontend post",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puleeno/wallery.git"
+  },
+  "keywords": [
+    "wordpress",
+    "media",
+    "gallery"
+  ],
+  "author": "Puleeno Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puleeno/wallery/issues"
+  },
+  "homepage": "https://github.com/puleeno/wallery#readme"
+}
