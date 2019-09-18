@@ -1,0 +1,19 @@
+{
+    "name": "puleeno/wallery",
+    "description": "WordPress gallery for meta box and frontend post",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Puleeno\\Wallery\\": "src/"
+        }
+    }
+}
