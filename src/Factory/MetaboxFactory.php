@@ -3,27 +3,24 @@ namespace Puleeno\Wallery\Factory;
 
 use Puleeno\Wallery\Abstracts\Factory;
 
-class MetaboxFactory extends Factory
-{
+class MetaboxFactory extends Factory {
 
-    protected $gallery_id;
 
-    public function __construct()
-    {
-        add_action('save_post', array( $this, 'save' ));
-    }
+	protected $wallary_id;
 
-    public function setId($gallery_id)
-    {
-        $this->gallery_id = $gallery_id;
-    }
+	public function __construct() {
+		add_action( 'save_post', array( $this, 'save' ) );
+	}
 
-    public function save()
-    {
-    }
+	public function setId( $wallary_id ) {
+		$this->wallary_id = $wallary_id;
+	}
 
-    public function render($post)
-    {
-        wallery_load_template('select-box');
-    }
+	public function save() {
+	}
+
+	public function render( $post ) {
+		$wallery_id = $this->wallary_id;
+		wallery_load_template( 'select-box', compact( 'wallery_id' ) );
+	}
 }
