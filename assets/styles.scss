@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "Wallery";
+  font-family: "wallery";
   src:url("../fonts/wallery.eot");
   src:url("../fonts/wallery.eot?#iefix") format("embedded-opentype"),
     url("../fonts/wallery.woff") format("woff"),
@@ -13,7 +13,7 @@
 }
 
 [data-icon]:before {
-  font-family: "Wallery" !important;
+  font-family: "wallery" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +27,7 @@
 
 [class^="wallery-"]:before,
 [class*=" wallery-"]:before {
-  font-family: "Wallery" !important;
+  font-family: "wallery" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -46,4 +46,10 @@
 }
 .wallery-upload-cloud:before {
   content: "\63";
+}
+.wallery-list:before {
+  content: "\64";
+}
+.wallery-layout:before {
+  content: "\65";
 }

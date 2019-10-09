@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "Wallery";
+  font-family: "wallery";
   src: url("../fonts/wallery.eot");
   src: url("../fonts/wallery.eot?#iefix") format("embedded-opentype"), url("../fonts/wallery.woff") format("woff"), url("../fonts/wallery.ttf") format("truetype"), url("../fonts/wallery.svg#wallery") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [data-icon]:before {
-  font-family: "Wallery" !important;
+  font-family: "wallery" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -20,7 +20,7 @@
 
 [class^="wallery-"]:before,
 [class*=" wallery-"]:before {
-  font-family: "Wallery" !important;
+  font-family: "wallery" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -43,9 +43,21 @@
   content: "\63";
 }
 
+.wallery-list:before {
+  content: "\64";
+}
+
+.wallery-layout:before {
+  content: "\65";
+}
+
+.clearfix {
+  clear: both;
+}
+
 .wallery .outline {
   border: 3px dashed #e5e5e5;
-  padding: 40px;
+  padding: 20px;
   cursor: pointer;
 }
 .wallery .outline .wallery-upload {
@@ -53,4 +65,76 @@
 }
 .wallery .wrapper {
   text-align: center;
+}
+.wallery .select-image-box {
+  padding: 20px;
+}
+.wallery .images-list {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: hidden;
+}
+.wallery .images-list .image {
+  padding: 10px;
+  float: left;
+}
+.wallery .wallery-toolbar-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.wallery .image {
+  position: relative;
+}
+.wallery .image:hover {
+  cursor: grab;
+}
+.wallery .image.ui-sortable-helper {
+  cursor: move;
+}
+.wallery .image .image-inner {
+  border: 2px solid #e5e5e5;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+.wallery .image .image-inner img {
+  width: 100%;
+  height: auto;
+}
+.wallery .image .remove-image {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 99;
+  color: #c93b39;
+  top: 15px;
+  right: 15px;
+  text-decoration: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #c93b39;
+  background: #fff;
+  text-align: center;
+  padding: 1px;
+}
+.wallery .image-layouts h2.heading-images {
+  float: left;
+  padding: 10px 0 !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 20px !important;
+}
+.wallery .layouts {
+  float: right;
+}
+.wallery .layouts .layout {
+  float: left;
+  cursor: pointer;
+}
+.wallery .layouts .layout [class^="wallery-"] {
+  font-size: 48px;
+  line-height: 48px;
 }
