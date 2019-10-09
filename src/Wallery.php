@@ -2,66 +2,67 @@
 namespace Puleeno\Wallery;
 
 use Puleeno\Wallery\Abstracts\Factory;
+use Puleeno\Wallery\Wallery\Ajax as WalleryAjax;
 
-class Wallery
-{
-    const VERSION  = '1.0.0';
-    const LIB_NAME = 'wallery';
+class Wallery {
 
-    protected $factory;
-    public $gallery_id;
+	const VERSION              = '1.0.0';
+	const LIB_NAME             = 'wallery';
+	const DEFAULT_IMAGE_LAYOUT = 'thumbnail';
 
-    public function __construct(Factory $factory, $gallery_id = null)
-    {
-        $this->factory = $factory;
-        if (! empty($gallery_id)) {
-            $this->setId($gallery_id);
-        }
-        $this->init();
-    }
+	protected $factory;
+	public $wallary_id;
 
-    public function setId($gallery_id)
-    {
-        $this->gallery_id = $gallery_id;
-    }
+	public function __construct( Factory $factory, $wallary_id = null ) {
+		$this->factory = $factory;
+		if ( ! empty( $wallary_id ) ) {
+			$this->setId( $wallary_id );
+		}
+		$this->init();
+	}
 
-    public function init()
-    {
-        if (defined('WALLERY_ABSPATH')) {
-            return;
-        }
-        $this->define('WALLERY_ABSPATH', realpath(dirname(__FILE__) . '/..'));
-        $this->includes();
-        $this->initHooks();
-    }
+	public function setId( $wallary_id ) {
+		$this->factory->setId( $wallary_id );
+	}
 
-    private function define($name, $value)
-    {
-        if (defined($name)) {
-            return;
-        }
-        define($name, $value);
-    }
+	public function init() {
+		if ( defined( 'WALLERY_ABSPATH' ) ) {
+			return;
+		}
+		$this->define( 'WALLERY_ABSPATH', realpath( dirname( __FILE__ ) . '/..' ) );
+		$this->includes();
+		$this->initHooks();
+	}
 
-    public function includes()
-    {
-        require_once WALLERY_ABSPATH . '/src/helpers.php';
-    }
+	private function define( $name, $value ) {
+		if ( defined( $name ) ) {
+			return;
+		}
+		define( $name, $value );
+	}
 
-    public function initHooks()
-    {
-        add_action('admin_enqueue_scripts', array( $this, 'enqueueScripts' ));
-    }
+	public function includes() {
+		require_once WALLERY_ABSPATH . '/src/helpers.php';
+	}
 
-    public function render($post)
-    {
-        $this->factory->render($post);
-    }
+	public function initHooks() {
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueueScripts' ) );
+		add_action( 'wallery_toolbars', array( $this->factory, 'toolbar_image_list_styles' ) );
 
-    public function enqueueScripts()
-    {
-        wp_register_style(self::LIB_NAME, wallery_asset_url('css/wallery.css'), array(), self::VERSION);
+		new WalleryAjax();
+	}
 
-        wp_enqueue_style(self::LIB_NAME);
-    }
+	public function render( $post ) {
+		$this->factory->render( $post );
+	}
+
+	public function enqueueScripts() {
+		wp_enqueue_media();
+
+		wp_register_style( self::LIB_NAME, wallery_asset_url( 'css/wallery.css' ), array(), self::VERSION );
+		wp_enqueue_style( self::LIB_NAME );
+
+		wp_register_script( self::LIB_NAME, wallery_asset_url( 'js/wallery.js' ), array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( self::LIB_NAME );
+	}
 }
