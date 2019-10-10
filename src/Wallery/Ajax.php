@@ -1,7 +1,9 @@
 <?php
 namespace Puleeno\Wallery\Wallery;
 
-class Ajax {
-	public function __construct() {
-	}
+class Ajax
+{
+    public function __construct()
+    {
+    }
 }

@@ -1,4 +1,4 @@
-<div class="wallery">
+<div id="<?php echo $wallery_id; ?>" class="wallery">
 	<div class="select-image-box">
 		<div class="wrapper">
 			<div class="outline">
@@ -21,5 +21,7 @@
 			<?php do_action( 'wallery_toolbars' ); ?>
 		</div>
 	</div>
-	<div id="<?php echo $wallery_id; ?>" class="images-list"></div>
+	<div class="images-list">
+
+	</div>
 </div>
