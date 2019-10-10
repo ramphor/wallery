@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/puleeno/wallery/issues"
   },
-  "homepage": "https://github.com/puleeno/wallery#readme"
+  "homepage": "https://github.com/puleeno/wallery#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  }
 }
