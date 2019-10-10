@@ -22,6 +22,10 @@
 		</div>
 	</div>
 	<div class="images-list">
-
+		<?php
+		foreach ( $images as $index => $image ) {
+			wallery_load_template( 'image-content', compact( 'index', 'image', 'wallery_id' ) );
+		}
+		?>
 	</div>
 </div>
