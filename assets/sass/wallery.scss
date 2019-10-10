@@ -46,6 +46,9 @@ $danger: #c93b39;
         position: relative;
         &:hover{
             cursor: grab;
+            .wallary-action {
+                display: block;
+            }
         }
         &.ui-sortable-helper {
             cursor: move;
@@ -62,13 +65,11 @@ $danger: #c93b39;
             }
         }
 
-        .remove-image {
+        .wallary-action {
             position: absolute;
             box-sizing: border-box;
             z-index: 99;
             color: $danger;
-            top: 15px;
-            right: 15px;
             text-decoration: none;
             height: 20px;
             width: 20px;
@@ -77,6 +78,17 @@ $danger: #c93b39;
             background: #fff;
             text-align: center;
             padding: 1px;
+            display: none;
+        }
+
+        .remove-image {
+            top: 15px;
+            right: 15px;
+        }
+
+        .change-image {
+            top: 15px;
+            right: 40px;
         }
     }
 

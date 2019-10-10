@@ -51,6 +51,10 @@
   content: "\65";
 }
 
+.wallery-retweet:before {
+  content: "\66";
+}
+
 .clearfix {
   clear: both;
 }
@@ -90,6 +94,9 @@
 .wallery .image:hover {
   cursor: grab;
 }
+.wallery .image:hover .wallary-action {
+  display: block;
+}
 .wallery .image.ui-sortable-helper {
   cursor: move;
 }
@@ -103,13 +110,11 @@
   width: 100%;
   height: auto;
 }
-.wallery .image .remove-image {
+.wallery .image .wallary-action {
   position: absolute;
   box-sizing: border-box;
   z-index: 99;
   color: #c93b39;
-  top: 15px;
-  right: 15px;
   text-decoration: none;
   height: 20px;
   width: 20px;
@@ -118,6 +123,15 @@
   background: #fff;
   text-align: center;
   padding: 1px;
+  display: none;
+}
+.wallery .image .remove-image {
+  top: 15px;
+  right: 15px;
+}
+.wallery .image .change-image {
+  top: 15px;
+  right: 40px;
 }
 .wallery .image-layouts h2.heading-images {
   float: left;

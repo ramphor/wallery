@@ -31,7 +31,7 @@ jQuery(
 									index  = listIndex + (i + 1);
 
 								$( wallery_element ).find( '.images-list' ).append(
-									'<div class="wallery-image image"><div class="image-inner"><input type="hidden" name="' + wallery_id + '[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br><a class="remove-image" href="#"><span class="wallery-trash"></span></a></div></div>'
+									'<div class="wallery-image image"><div class="image-inner"><input type="hidden" name="' + wallery_id + '[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="wallary-action change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><span class="wallery-retweet"></span></a><br><a class="wallary-action remove-image" href="#"><span class="wallery-trash"></span></a></div></div>'
 								);
 							}
 						);
@@ -77,7 +77,8 @@ jQuery(
 		function resetIndex() {
 			$( '.images-list .image' ).each(
 				function (i) {
-					$( this ).find( 'input:hidden' ).attr( 'name', 'vdw_gallery_id[' + i + ']' );
+					var wallery_id = $(this).parents('.images-list').parent().attr('id');
+					$( this ).find( 'input:hidden' ).attr( 'name', wallery_id + '[' + i + ']' );
 				}
 			);
 		}
