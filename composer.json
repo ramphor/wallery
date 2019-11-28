@@ -1,6 +1,7 @@
 {
     "name": "puleeno/wallery",
     "description": "WordPress gallery for meta box and frontend post",
+    "version": "1.0.5",
     "type": "library",
     "license": "MIT",
     "authors": [

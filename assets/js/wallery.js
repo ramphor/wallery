@@ -6,7 +6,7 @@ jQuery(
 			'.select-image-box',
 			function (e) {
 				var wallery_element = $( this ).parent( '.wallery' );
-				var wallery_id = $(wallery_element).attr('id');
+				var wallery_id      = $( wallery_element ).attr( 'id' );
 				e.preventDefault();
 				if (file_frame) {
 					file_frame.close();
@@ -27,11 +27,11 @@ jQuery(
 							selection = file_frame.state().get( 'selection' );
 						selection.map(
 							function (attachment, i) {
-								attachment = attachment.toJSON(),
-									index  = listIndex + (i + 1);
-
+								attachment = attachment.toJSON();
+								index      = listIndex + (i + 1);
+								firstImage = attachment.sizes.thumbnail ? attachment.sizes.thumbnail : _.head( Object.values( attachment.sizes ) );
 								$( wallery_element ).find( '.images-list' ).append(
-									'<div class="wallery-image image"><div class="image-inner"><input type="hidden" name="' + wallery_id + '[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="wallary-action change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><span class="wallery-retweet"></span></a><br><a class="wallary-action remove-image" href="#"><span class="wallery-trash"></span></a></div></div>'
+									'<div class="wallery-image image"><div class="image-inner"><input type="hidden" name="' + wallery_id + '[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + firstImage.url + '"><a class="wallary-action change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><span class="wallery-retweet"></span></a><br><a class="wallary-action remove-image" href="#"><span class="wallery-trash"></span></a></div></div>'
 								);
 							}
 						);
@@ -65,9 +65,9 @@ jQuery(
 					'select',
 					function () {
 						attachment = file_frame.state().get( 'selection' ).first().toJSON();
-
+						firstImage = attachment.sizes.thumbnail ? attachment.sizes.thumbnail : _.head( Object.values( attachment.sizes ) );
 						that.parent().find( 'input:hidden' ).attr( 'value', attachment.id );
-						that.parent().find( 'img.image-preview' ).attr( 'src', attachment.sizes.thumbnail.url );
+						that.parent().find( 'img.image-preview' ).attr( 'src', firstImage.url );
 					}
 				);
 				file_frame.open();
@@ -77,7 +77,7 @@ jQuery(
 		function resetIndex() {
 			$( '.images-list .image' ).each(
 				function (i) {
-					var wallery_id = $(this).parents('.images-list').parent().attr('id');
+					var wallery_id = $( this ).parents( '.images-list' ).parent().attr( 'id' );
 					$( this ).find( 'input:hidden' ).attr( 'name', wallery_id + '[' + i + ']' );
 				}
 			);

@@ -7,7 +7,7 @@ use Puleeno\Wallery\Wallery\Ajax as WalleryAjax;
 class Wallery
 {
 
-    const VERSION              = '1.0.0';
+    const VERSION              = '1.0.5';
     const LIB_NAME             = 'wallery';
     const DEFAULT_IMAGE_LAYOUT = 'thumbnail';
 
