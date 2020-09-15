@@ -1,7 +1,7 @@
 <?php
-namespace Puleeno\Wallery\Factory;
+namespace Ramphor\Wallery\Factory;
 
-use Puleeno\Wallery\Abstracts\Factory;
+use Ramphor\Wallery\Abstracts\Factory;
 
 class MetaboxFactory extends Factory
 {

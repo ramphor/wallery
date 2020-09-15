@@ -1,7 +1,7 @@
 <?php
-namespace Puleeno\Wallery\Abstracts;
+namespace Ramphor\Wallery\Abstracts;
 
-use Puleeno\Wallery\Interfaces\Factory as FactoryInterfaces;
+use Ramphor\Wallery\Interfaces\Factory as FactoryInterfaces;
 
 abstract class Factory implements FactoryInterfaces
 {

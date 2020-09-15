@@ -1,5 +1,5 @@
 <?php
-namespace Puleeno\Wallery\Wallery;
+namespace Ramphor\Wallery\Wallery;
 
 class Ajax
 {
