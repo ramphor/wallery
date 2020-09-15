@@ -1,5 +1,5 @@
 <?php
-namespace Puleeno\Wallery\Interfaces;
+namespace Ramphor\Wallery\Interfaces;
 
 interface Factory
 {

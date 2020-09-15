@@ -1,5 +1,5 @@
 {
-    "name": "puleeno/wallery",
+    "name": "ramphor/wallery",
     "description": "WordPress gallery for meta box and frontend post",
     "version": "1.0.5",
     "type": "library",
@@ -14,7 +14,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Puleeno\\Wallery\\": "src/"
+            "Ramphor\\Wallery\\": "src/"
         }
     }
 }

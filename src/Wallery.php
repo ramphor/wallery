@@ -1,8 +1,8 @@
 <?php
-namespace Puleeno\Wallery;
+namespace Ramphor\Wallery;
 
-use Puleeno\Wallery\Abstracts\Factory;
-use Puleeno\Wallery\Wallery\Ajax as WalleryAjax;
+use Ramphor\Wallery\Abstracts\Factory;
+use Ramphor\Wallery\Wallery\Ajax as WalleryAjax;
 
 class Wallery
 {
