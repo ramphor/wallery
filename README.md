@@ -24,8 +24,8 @@ use Ramphor\Wallery\Factory\MetaboxFactory;
 ```
 <?php
 if ( class_exists( Wallery::class ) ) {
-    $wallaryFactory  = new MetaboxFactory();
-    $walleryInstance = new Wallery( $wallaryFactory );
+    $walleryFactory  = new MetaboxFactory();
+    $walleryInstance = new Wallery( $walleryFactory );
 
     $walleryInstance->setId( 'the_key_name_to_store_gallary_to_database' );
 }
