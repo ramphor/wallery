@@ -24,7 +24,7 @@ use Ramphor\Wallery\Factory\MetaboxFactory;
 ```
 <?php
 if ( class_exists( Wallery::class ) ) {
-    $walleryFactory  = new MetaboxFactory();
+    $walleryFactory  = new MetaboxFactory('Image Heading Text');
     $walleryInstance = new Wallery( $walleryFactory );
 
     $walleryInstance->setId( 'the_key_name_to_store_gallary_to_database' );
@@ -39,7 +39,7 @@ add_action('add_meta_boxes', 'wallery_register_metabox');
 function wallery_register_metabox() {
     add_meta_box(
         'metabox_id',
-        ( 'Metabox Wallery Title', 'cominovel' ),
+        'Metabox text title',
         array( $walleryInstance, 'render' ),
         'chapter'
     );
