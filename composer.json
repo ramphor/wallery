@@ -1,7 +1,6 @@
 {
     "name": "ramphor/wallery",
     "description": "WordPress gallery for meta box and frontend post",
-    "version": "1.6.0",
     "type": "library",
     "license": "MIT",
     "authors": [
