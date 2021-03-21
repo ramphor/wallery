@@ -5,6 +5,7 @@ use Ramphor\Wallery\Interfaces\Factory as FactoryInterfaces;
 
 abstract class Factory implements FactoryInterfaces
 {
+    protected $imageListHeadingText = 'Images';
 
     public function get_curent_image_layout()
     {
@@ -21,6 +22,8 @@ abstract class Factory implements FactoryInterfaces
 
     function toolbar_image_list_styles()
     {
-        wallery_load_template('image-list-styles');
+        wallery_load_template('image-list-styles', array(
+            'heading_text' => $this->imageListHeadingText,
+        ));
     }
 }

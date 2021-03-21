@@ -1,6 +1,6 @@
 <div class="toolbar image-layouts">
 	<h2 class="heading-images">
-		<?php _e( 'Chapter Images', 'wallery' ); ?>
+		<?php echo esc_html($heading_text); ?>
 	</h2>
 	<div class="layouts">
 		<div class="layout layout-list">

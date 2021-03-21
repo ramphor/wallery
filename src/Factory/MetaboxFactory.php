@@ -5,12 +5,14 @@ use Ramphor\Wallery\Abstracts\Factory;
 
 class MetaboxFactory extends Factory
 {
-
-
     protected $wallary_id;
+    protected $imageListHeadingText = 'Images';
 
-    public function __construct()
+    public function __construct($headingText = null)
     {
+        if (!is_null($headingText)) {
+            $this->imageListHeadingText = $headingText;
+        }
         add_action('save_post', array( $this, 'save' ));
     }
 
