@@ -33,7 +33,11 @@ class Wallery
         if (defined('WALLERY_ABSPATH')) {
             return;
         }
-        $this->define('WALLERY_ABSPATH', realpath(dirname(__FILE__) . '/..'));
+        $walleryAbsPath = realpath(dirname(__FILE__) . '/..');
+        if (PHP_OS === 'WINNT') {
+            $walleryAbsPath = str_replace(DIRECTORY_SEPARATOR, '/', $walleryAbsPath);
+        }
+        $this->define('WALLERY_ABSPATH', $walleryAbsPath);
         $this->includes();
         $this->initHooks();
     }

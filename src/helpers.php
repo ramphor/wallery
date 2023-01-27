@@ -20,9 +20,14 @@ function wallery_load_template($template, $data = array())
  */
 function wallery_asset_url($path = '')
 {
+    $absPath = constant('ABSPATH');
+    if (PHP_OS === 'WINNT') {
+        $absPath = str_replace(DIRECTORY_SEPARATOR, '/', $absPath);
+    }
+
     $path = sprintf(
         '%s/assets/%s',
-        str_replace(ABSPATH, '', WALLERY_ABSPATH),
+        str_replace($absPath, '', constant('WALLERY_ABSPATH')),
         $path
     );
     return site_url($path);
