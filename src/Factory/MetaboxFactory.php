@@ -23,6 +23,11 @@ class MetaboxFactory extends Factory
 
     public function save($post_id = null)
     {
+        // This is Gutenberg editor data. So we will ignore it
+        if (empty($_POST)) {
+            return null;
+        }
+
         if (!empty($_POST[$this->wallary_id])) {
             update_post_meta($post_id, $this->wallary_id, $_POST[$this->wallary_id]);
         } else {
